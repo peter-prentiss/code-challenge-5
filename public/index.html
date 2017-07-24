@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <script src="scripts/controllers/MessageController.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body ng-app='myApp'>
+    <div ng-controller='MessageController as mc'>
+      <div class="container">
+        <div>
+          <label for="message-name">Name</label>
+          <input type="text" id="message-name" ng-model="mc.newMessage.name" placeholder="Name">
+          <label for="message-text">Message</label>
+          <input type="text" id="message-text" ng-model="mc.newMessage.message" placeholder="Message">
+          <button class="btn btn-primary" ng-click="mc.addMessage()">Add Message</button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 realestate" ng-repeat='post in mc.messageData'>
+            <div>
+              Name: {{post.name}}
+            </div>
+            <div>
+              Message: {{post.message}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <ng-view></ng-view> -->
+  </body>
+</html>
